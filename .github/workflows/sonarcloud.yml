@@ -58,6 +58,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: |
-            -D sonar.projectKey=TheDuskOfAllDays_Literaverse
-            -D sonar.organization=theduskofalldays
+            -Dsonar.projectKey=TheDuskOfAllDays_Literaverse
+            -Dsonar.organization=theduskofalldays
           projectBaseDir: .
