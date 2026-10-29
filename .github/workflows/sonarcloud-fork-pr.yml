@@ -1,0 +1,16 @@
+name: SonarCloud fork PR notice
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ForkNotice:
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SonarCloud skipped for fork PR
+        run: |
+          echo "Skipping SonarCloud analysis for forked PRs because repository secrets are not available."
